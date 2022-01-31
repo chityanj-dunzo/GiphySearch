@@ -38,17 +38,18 @@ function search(input) {
 
 function pushToDOM(data) {
 
-    var response = JSON.parse(data);
-    var container = document.querySelector(".js-container");
     
+    var container = document.querySelector(".js-container");
     
         
     for (let index = 0; index < 50; index++) {
+        var response = JSON.parse(data);
+        
         var imageUrls = response.data[index]
         var imageUrl = imageUrls.images.fixed_height.webp
         console.log(imageUrl);
-        container.innerHTML = imageUrl;
-        //container.innerHTML = `<img src="${imageUrl}">`;
+        //container.innerHTML = container.innerHTML + imageUrl;
+        container.innerHTML = container.innerHTML + `<img src="${imageUrl}">`;
         
     }
     
