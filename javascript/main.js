@@ -26,8 +26,9 @@ function search(input) {
         GiphyAJAXCall.send();
 
         GiphyAJAXCall.addEventListener('load',function(e){
-
+            console.log(e.target.response)
             var data = e.target.response;
+            console.log(data)
             pushToDOM(data);
   
   });
